@@ -1,6 +1,7 @@
 package com.utkarsh.springh2jdbc;
 
 import com.utkarsh.springh2jdbc.model.Student;
+import com.utkarsh.springh2jdbc.service.StudentService;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -14,6 +15,9 @@ public class SpringH2JdbcApplication {
         s.setRollNo(49);
         s.setName("Utkarsh");
         s.setMarks(89);
+        StudentService service = context.getBean(StudentService.class);
+        service.addStudent(s);
+
 
 
     }
